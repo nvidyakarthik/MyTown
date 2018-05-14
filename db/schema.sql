@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS myTown_db;
+CREATE DATABASE myTown_db;
