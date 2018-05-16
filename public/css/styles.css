@@ -6,7 +6,7 @@ body {
 
 #jumbo {
 	height: 300px;
-	background-image: url("../images/jumboimage.jpg");
+	background-image: url("../css/images/jumboimage.jpg");
 	background-position: 0% 15%;
     background-size: cover;
     background-repeat: no-repeat;
