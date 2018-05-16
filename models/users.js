@@ -1,4 +1,4 @@
-module.express = function(sequelize, DataTypes){
+module.exports = function(sequelize, DataTypes){
     var Users = sequalize.define("Users", {
         fname: DataTypes.STRING,
         lname: DataTypes.STRING,
