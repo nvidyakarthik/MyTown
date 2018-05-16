@@ -8,4 +8,5 @@ module.exports = function(sequelize, DataTypes){
         category: DataTypes.STRING,
         userid: DataTypes.INTEGER
     });
+    return Posts;
 };
