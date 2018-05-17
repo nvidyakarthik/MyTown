@@ -1,14 +1,10 @@
 module.exports = function(sequelize, DataTypes){
-    var Category = sequelize.define("Category", {
+    var Categories = sequelize.define("Categories", {
         categoryName: DataTypes.STRING,
     });
 
-    Category.associate = function(models) {
-        Category.belongsTo(models.Post,
-          {
-              foreignKey: 'fk_categoryid',
-              targetKey: 'id'
-           } 
-      )}; 
-    return Category;
+     Categories.associate = function(models) {
+        Categories.hasMany(models.Posts);
+      };  
+    return Categories;
 };
