@@ -1,0 +1,48 @@
+<div id="container">
+        
+        <div id="jumbo">
+            <div class="topnav">
+                <a href="login.handlebars">Sign In</a>
+                <a href="#createaccount">Create an Account</a>
+                <a href="#postevent">Post a Place</a>
+            </div>
+
+            <a href="index.handlebars"><h1 id="title">My Town</h1></a>
+            <input type="text" placeholder="Search by location" id="searchbar">
+        </div>
+        
+        <div class="row">
+
+            <div class="col-2">
+            </div>
+
+            <div class="col-5">
+                <h3 class="subtitle">Sign In</h3>
+                <div id="login">
+                    <form action="/action_page.php">
+                        <div class="form-group">
+                            <label for="email">Email address:</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-5">
+                <h3 class="subtitle">Happening this Weekend</h3>
+                <div id="weekend">
+                </div>
+            </div>
+        </div>
+</div>
