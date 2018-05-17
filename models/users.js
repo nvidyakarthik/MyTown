@@ -6,5 +6,10 @@ module.exports = function(sequelize, DataTypes){
         password: DataTypes.STRING,
         admin: DataTypes.BOOLEAN
     });
+    Users.associate = function(models){
+        Users.hasMany(models.Posts, {
+            onDelete: "cascade"
+        });
+    };
     return Users;
 };

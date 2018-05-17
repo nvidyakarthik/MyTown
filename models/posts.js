@@ -5,8 +5,15 @@ module.exports = function(sequelize, DataTypes){
         hours: DataTypes.DATE,
         link: DataTypes.STRING,
         description: DataTypes.TEXT,
-        category: DataTypes.STRING,
-        userid: DataTypes.INTEGER
+        category: DataTypes.STRING
     });
+
+    Posts.associate = function(models) {
+        Posts.belongsTo(models.Users, {
+            forignKey: {
+                allowNull: false            
+            }
+        });
+    };
     return Posts;
 };
