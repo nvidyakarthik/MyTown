@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    var Posts = sequelize.define("Posts", {
+    var Post = sequelize.define("Post", {
         name: DataTypes.STRING,
         location: DataTypes.STRING,
         websitelink: DataTypes.STRING,
@@ -7,14 +7,14 @@ module.exports = function(sequelize, DataTypes){
         description: DataTypes.TEXT,
         kidfriendly:DataTypes.BOOLEAN
     });
-    Posts.associate = function(models) {
-       Posts.belongsTo(models.Users,
+    Post.associate = function(models) {
+       Post.belongsTo(models.User,
          {
              foreignKey: 'fk_userid',
              targetKey:'id'
              
           });
-        Posts.belongsTo(models.Categories,
+        Post.hasOne(models.Category,
             {
                 foreignKey: 'fk_categoryid',
                 targetKey:'id'
@@ -22,5 +22,5 @@ module.exports = function(sequelize, DataTypes){
              }); 
      };
    
-      return Posts;
+      return Post;
 };
