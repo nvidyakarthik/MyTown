@@ -1,17 +1,17 @@
 module.exports = function(sequelize, DataTypes){
-    var Users = sequelize.define("Users", {
+    var User = sequelize.define("User", {
         firstname: DataTypes.STRING,
         lastname: DataTypes.STRING,
         email: DataTypes.STRING,
         password: DataTypes.STRING,
         admin: DataTypes.BOOLEAN
     });
-    Users.associate = function(models) {
-        Users.hasMany(models.Posts,
+    User.associate = function(models) {
+        User.hasMany(models.Post,
           {
               foreignKey: 'fk_userid',
               sourceKey: 'id'
            } 
       )}; 
-    return Users;
+    return User;
 };
