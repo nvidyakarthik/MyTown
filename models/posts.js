@@ -3,8 +3,10 @@ module.exports = function(sequelize, DataTypes){
         name: DataTypes.STRING,
         location: DataTypes.STRING,
         hours: DataTypes.DATE,
-        link: DataTypes.STRING,
+        websitelink: DataTypes.STRING,
+        picturelink:DataTypes.STRING,        
         description: DataTypes.TEXT,
+        kidfriendly:DataTypes.BOOLEAN
     });
     Posts.associate = function(models) {
        Posts.belongsTo(models.Users,
@@ -13,7 +15,7 @@ module.exports = function(sequelize, DataTypes){
              targetKey:'id'
              
           });
-        Posts.belongsTo(models.Category,
+        Posts.belongsTo(models.Categories,
             {
                 foreignKey: 'fk_categoryid',
                 targetKey:'id'
