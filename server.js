@@ -35,6 +35,10 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 
 require("./routes/api-routes.js")(app);
+var authRoute = require('./routes/auth-routes.js')(app,passport);
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, db.Users);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
