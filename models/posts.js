@@ -5,6 +5,7 @@ module.exports = function(sequelize, DataTypes){
         websitelink: DataTypes.STRING,
         picturelink:DataTypes.STRING,        
         description: DataTypes.TEXT,
+
         kidfriendly:DataTypes.BOOLEAN
     });
     Posts.associate = function(models) {
