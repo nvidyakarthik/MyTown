@@ -6,10 +6,18 @@ module.exports = function (app) {
 
     });
 
-    app.get("/user", function (req, res) {
+    app.get("/login", function (req, res) {
         res.render("login");
 
 
+    });
+    
+    app.get("/newaccount", function (req, res) {
+        res.render("newaccount");
+    });
+
+    app.get("/posts", function (req, res) {
+        res.render("createpost");
     });
     app.get("/api/categories", function (req, res) {
         db.Categories.findAll({
@@ -50,13 +58,6 @@ module.exports = function (app) {
 
     });
  
-    app.get("/register", function (req, res) {
-        res.render("register");
-    });
-
-    app.get("/posts", function (req, res) {
-        res.render("postevent");
-    });
 
     app.post("/api/posts", function (req, res) {
         db.Posts.create(req.body).then(function (postCreated) {
