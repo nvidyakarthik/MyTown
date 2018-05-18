@@ -1,6 +1,17 @@
 var db = require("../models");
 module.exports = function (app) {
     app.get("/", function (req, res) {
+       
+            res.render("index");     
+
+    });
+
+    app.get("/user", function (req, res) {
+        res.render("login");
+
+
+    });
+    app.get("/api/categories", function (req, res) {
         db.Categories.findAll({
 
         }).then(function (categoryData) {
@@ -12,7 +23,8 @@ module.exports = function (app) {
         });
 
     });
-    app.get("/api/listAllActivities", function (req, res) {
+    
+    app.get("/api/allPosts", function (req, res) {
         db.Posts.findAll({}).then(function (activityData) {
             var activityObject = {
                 activities: activityData
@@ -22,10 +34,11 @@ module.exports = function (app) {
         });
 
     });
-    app.get("/api/filterActivity/:categoryId", function (req, res) {
+
+    app.get("/api/posts/:id", function (req, res) {
         db.Posts.findAll({
             where: {
-                CategoryId: req.params.categoryId
+                CategoryId: req.params.id
             }
         }).then(function (activityData) {
             var activityObject = {
@@ -36,37 +49,28 @@ module.exports = function (app) {
         });
 
     });
-    app.get("/login", function (req, res) {
-        res.render("login", {});
-
-
-    });
-
+ 
     app.get("/register", function (req, res) {
-        res.render("register", {});
-
-
+        res.render("register");
     });
-    app.get("/postevent", function (req, res) {
+
+    app.get("/posts", function (req, res) {
         res.render("postevent");
-
     });
-    app.post("/api/postevent", function (req, res) {
 
+    app.post("/api/posts", function (req, res) {
         db.Posts.create(req.body).then(function (postCreated) {
-
             res.json('OK');
         });
     });
-    app.post("/api/registerUser", function (req, res) {
 
+    app.post("/api/users", function (req, res) {
         db.Users.create(req.body).then(function (userCreated) {
-
             res.json('OK');
         });
     });
-    app.get("/api/approveList", function (req, res) {
 
+    app.get("/api/posts", function (req, res) {
         db.Posts.findAll({
             where: {
                 approved: 0
@@ -80,7 +84,7 @@ module.exports = function (app) {
         });
     });
 
-    app.put("/api/approved", function (req, res) {
+    app.put("/api/posts", function (req, res) {
         db.Posts.update(
             req.body,
             {
@@ -91,8 +95,4 @@ module.exports = function (app) {
                 res.json(dbPost);
             });
     });
-
-
-
-
 };
