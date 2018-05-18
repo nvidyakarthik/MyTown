@@ -5,8 +5,8 @@ module.exports = function(sequelize, DataTypes){
         websitelink: DataTypes.STRING,
         picturelink:DataTypes.STRING,        
         description: DataTypes.TEXT,
-        kidfriendly:DataTypes.BOOLEAN
-        
+        kidfriendly:DataTypes.BOOLEAN,
+        approved:DataTypes.BOOLEAN        
     });
     Posts.associate = function(models) {
        Posts.belongsTo(models.Users);
