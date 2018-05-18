@@ -5,23 +5,16 @@ module.exports = function(sequelize, DataTypes){
         websitelink: DataTypes.STRING,
         picturelink:DataTypes.STRING,        
         description: DataTypes.TEXT,
-
-        kidfriendly:DataTypes.BOOLEAN
+        kidfriendly:DataTypes.BOOLEAN,
+        approved:{
+           type: DataTypes.BOOLEAN ,
+           defaultValue:0 
+        }      
     });
     Posts.associate = function(models) {
-       Posts.belongsTo(models.Users,
-         {
-             foreignKey: 'fk_userid',
-             targetKey:'id'
-             
-          });
-        Posts.belongsTo(models.Categories,
-            {
-                foreignKey: 'fk_categoryid',
-                targetKey:'id'
-                
-             }); 
-     };
+       Posts.belongsTo(models.Users);
+       Posts.belongsTo(models.Categories);
+    }
    
       return Posts;
 };

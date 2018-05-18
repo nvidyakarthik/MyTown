@@ -3,12 +3,8 @@ module.exports = function(sequelize, DataTypes){
         categoryName: DataTypes.STRING,
     });
 
-    Categories.associate = function(models) {
-        Categories.hasMany(models.Posts,
-          {
-              foreignKey: 'fk_categoryid',
-              sourceKey: 'id'
-           } 
-      )}; 
+     Categories.associate = function(models) {
+        Categories.hasMany(models.Posts);
+      };  
     return Categories;
 };
