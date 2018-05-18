@@ -14,22 +14,6 @@ module.exports = function (app) {
         res.render("index");
     });
     
-    /* app.get("/newaccount", function (req, res) {
-        res.render("newaccount");
-    }); */
-
-  /*   app.get("/posts", function (req, res) {
-        db.Categories.findAll({
-
-        }).then(function (categoryData) {
-            var categoryObject = {
-                categoryList: categoryData
-            };
-            //console.log(categoryObject);
-            res.render("createpost", categoryObject);
-        });
-        
-    }) */;
     app.get("/api/categories", function (req, res) {
         db.Categories.findAll({
 
