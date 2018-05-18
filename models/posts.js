@@ -1,10 +1,28 @@
 module.exports = function(sequelize, DataTypes){
     var Posts = sequelize.define("Posts", {
-        name: DataTypes.STRING,
-        location: DataTypes.STRING,
+        name: {
+            type:DataTypes.STRING,
+            allowNull:false,
+            validate:{
+                len:[1]
+            }
+
+        },
+        street:DataTypes.STRING,
+        city: {
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        state: {
+            type:DataTypes.STRING,
+            allowNull:false
+        },
         websitelink: DataTypes.STRING,
         picturelink:DataTypes.STRING,        
-        description: DataTypes.TEXT,
+        description: {
+            type:DataTypes.TEXT,
+            allowNull:false
+        },
         kidfriendly:DataTypes.BOOLEAN,
         approved:{
            type: DataTypes.BOOLEAN ,
