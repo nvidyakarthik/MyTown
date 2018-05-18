@@ -55,3 +55,17 @@ input[type="text"] {
 .btn-primary, .btn-primary:hover {
 	background-color: #0e1822;
 }
+
+#city {
+	width: 250px;
+	float: left;
+}
+
+#state {
+	width: 150px;
+	float: left;
+}
+
+#zip {
+	width: 130px;
+}

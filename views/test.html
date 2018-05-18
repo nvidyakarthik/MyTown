@@ -18,12 +18,12 @@
         
         <div id="jumbo">
             <div class="topnav">
-                <a href="login.handlebars">Sign In</a>
-                <a href="#createaccount">Create an Account</a>
-                <a href="#postevent">Post a Place</a>
+                <a href="/login">Sign In</a>
+                <a href="/newaccount">Create an Account</a>
+                <a href="/posts">Post a Place</a>
             </div>
 
-            <a href="index.handlebars"><h1 id="title">My Town</h1></a>
+            <a href="/home"><h1 id="title">My Town</h1></a>
             <input type="text" placeholder="Search by location" id="searchbar">
         </div>
         
@@ -34,21 +34,26 @@
 
             <div class="col-5">
                 <h3 class="subtitle">Post a Place</h3>
-                <form>
+                <form id="placePost">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="placename" placeholder="Name of place-required">
+                        <input type="text" class="form-control" id="placeName" placeholder="Name of place-required">
                     </div>
 
                      <div class="form-group">
-                        <input type="text" class="form-control" id="location" placeholder="Location-required">
+                        <input type="text" class="form-control" id="street" placeholder="Street Address">
+                    </div>
+
+
+                     <div class="form-group">
+                        <span><input type="text" class="form-control" id="city" placeholder="City-required"></span><input type="text" class="form-control" id="state" placeholder="State-required"><span><input type="text" class="form-control" id="zip" placeholder="Zip Code"></span>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="hours" placeholder="Hours of operation">
+                        <input type="text" class="form-control" id="siteLink" placeholder="Link to site">
                     </div>
-
+                    
                     <div class="form-group">
-                        <input type="text" class="form-control" id="link" placeholder="Link to site">
+                        <input type="text" class="form-control" id="picLink" placeholder="Link to site">
                     </div>
 
                     <div class="form-group">
@@ -56,14 +61,21 @@
                     </div>
 
                      <div class="form-group">
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="tag">
                             <option value="" disabled="" selected="">Choose your category</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option value="museum">Museum</option>
+                            <option value="camp-site">Camp-site</option>
+                            <option value="hike">Hiking Trail</option>
+                            <option value="liveMusic">Live Music Venue</option>
+                            <option value="farmersMarket">Farmers Market</option>
+                            <option value="park">Park</option>
+                            <option value="water">Water Activity</option>
+                            <option value="other">Other</option>
                         </select>
+                    </div>
+
+                    <div class="checkbox">
+                        <label id="kidFriendly"><input type="checkbox">Kid Friendly</label>
                     </div>
 
   
