@@ -51,3 +51,7 @@ input[type="text"] {
 	text-align: center;
 	color: black;
 }
+
+.btn-primary, .btn-primary:hover {
+	background-color: #0e1822;
+}
