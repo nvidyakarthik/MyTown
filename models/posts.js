@@ -6,7 +6,10 @@ module.exports = function(sequelize, DataTypes){
         picturelink:DataTypes.STRING,        
         description: DataTypes.TEXT,
         kidfriendly:DataTypes.BOOLEAN,
-        approved:DataTypes.BOOLEAN        
+        approved:{
+           type: DataTypes.BOOLEAN ,
+           defaultValue:0 
+        }      
     });
     Posts.associate = function(models) {
        Posts.belongsTo(models.Users);
