@@ -13,7 +13,7 @@ var app = express();
 
 // For Passport
  
-app.use(session({ secret: 'mykeyboard cat',resave: true, saveUninitialized:true})); // session secret 
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret 
 app.use(passport.initialize()); 
 app.use(passport.session()); // persistent login sessions
 
