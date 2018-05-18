@@ -19,7 +19,8 @@ $(document).ready(function() {
         var newPost = {};
         
 
-    })
+    });
 
 
-})
+});
+
