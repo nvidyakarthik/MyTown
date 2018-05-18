@@ -19,7 +19,16 @@ module.exports = function (app) {
     });
 
     app.get("/posts", function (req, res) {
-        res.render("createpost");
+        db.Categories.findAll({
+
+        }).then(function (categoryData) {
+            var categoryObject = {
+                categoryList: categoryData
+            };
+            //console.log(categoryObject);
+            res.render("createpost", categoryObject);
+        });
+        
     });
     app.get("/api/categories", function (req, res) {
         db.Categories.findAll({

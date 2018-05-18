@@ -46,15 +46,13 @@
 
                      <div class="form-group">
                         <select class="form-control" id="tag">
+                           
                             <option value="" disabled="" selected="">Choose your category</option>
-                            <option value="museum">Museum</option>
-                            <option value="camp-site">Camp-site</option>
-                            <option value="hike">Hiking Trail</option>
-                            <option value="liveMusic">Live Music Venue</option>
-                            <option value="farmersMarket">Farmers Market</option>
-                            <option value="park">Park</option>
-                            <option value="water">Water Activity</option>
-                            <option value="other">Other</option>
+                             {{#each  categoryList}} 
+                                <option value="{{id}}">{{categoryName}}</option>
+                         
+                             {{/each}}
+                            
                         </select>
                     </div>
 
