@@ -1,0 +1,64 @@
+<div id="container">
+        
+        <div id="jumbo">
+            <div class="topnav">
+                <a href="/login">Sign In</a>
+                <a href="/newaccount">Create an Account</a>
+                <a href="/createpost">Post a Place</a>
+            </div>
+
+            <a href="/index"><h1 id="title">My Town</h1></a>
+            <input type="text" placeholder="Search by location" id="searchbar">
+        </div>
+        
+        <div class="row">
+
+            <div class="col-2">
+            </div>
+
+            <div class="col-5">
+                <h3 class="subtitle">Post a Place</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="placename" placeholder="Name of place-required">
+                    </div>
+
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="location" placeholder="Location-required">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="hours" placeholder="Hours of operation">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="link" placeholder="Link to site">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" id="description" rows="3" placeholder="Description-required"></textarea>
+                    </div>
+
+                     <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option value="" disabled="" selected="">Choose your category</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+
+  
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="col-5">
+                <h3 class="subtitle">Happening this Weekend</h3>
+                <div id="weekend">
+                </div>
+            </div>
+        </div>
+</div>

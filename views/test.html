@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+ 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Town</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/styles.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
+<body>
+	<div id="container">
+        
+        <div id="jumbo">
+            <div class="topnav">
+                <a href="login.handlebars">Sign In</a>
+                <a href="#createaccount">Create an Account</a>
+                <a href="#postevent">Post a Place</a>
+            </div>
+
+            <a href="index.handlebars"><h1 id="title">My Town</h1></a>
+            <input type="text" placeholder="Search by location" id="searchbar">
+        </div>
+        
+        <div class="row">
+
+            <div class="col-2">
+            </div>
+
+            <div class="col-5">
+                <h3 class="subtitle">Post a Place</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="placename" placeholder="Name of place-required">
+                    </div>
+
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="location" placeholder="Location-required">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="hours" placeholder="Hours of operation">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="link" placeholder="Link to site">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" id="description" rows="3" placeholder="Description-required"></textarea>
+                    </div>
+
+                     <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option value="" disabled="" selected="">Choose your category</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+
+  
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="col-5">
+                <h3 class="subtitle">Happening this Weekend</h3>
+                <div id="weekend">
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>

@@ -2,9 +2,9 @@
         
         <div id="jumbo">
             <div class="topnav">
-                <a href="#signin">Sign In</a>
-                <a href="#createaccount">Create an Account</a>
-                <a href="#postevent">Post a Place</a>
+                <a href="/login">Sign In</a>
+                <a href="/newaccount">Create an Account</a>
+                <a href="/createpost">Post a Place</a>
             </div>
 
             <h1 id="title">My Town</h1>
@@ -16,6 +16,14 @@
             <div class="col-2">
                 <h4 class="subtitle">Filter By:</h4>
                 <div id="filters">
+                    <ul>
+                    {{#each categoryList}} 
+                         <li>
+                            <a href="#" id="{{categoryName}}">{{categoryName}}</a>
+              
+                        </li>
+                    {{/each}}
+                  </ul>
                 </div>
             </div>
 
