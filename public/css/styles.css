@@ -3,6 +3,7 @@ body {
 	font-family: 'Fjalla One', sans-serif;
 	color: black;
 	background-color:#F6F5F5;
+	min-height: 2000px;
 }
 
 #jumbo {
@@ -156,4 +157,103 @@ input[type="text"] {
 
 #welcome {
 	color: white;
+}
+
+h6 {
+	height: 30px;
+}
+
+.displayPic {
+	height: 112px;
+	width: 150px;
+	float: left;
+	position: relative;
+	border: 4px solid rgba(243, 184, 36, 0);
+	border-radius: 10px;
+}
+
+.displayPicBorder {
+	border: 4px solid rgb(28, 230, 219);
+	border-radius: 10px;
+}
+
+.posts {
+	float: left;
+	position: relative;
+	margin: 5px;
+	padding: 15px;
+	background-color: rgb(231, 231, 231);
+	border-radius: 10px;
+}
+
+.posts:hover {
+	background-color: rgb(207, 207, 207);
+
+}
+
+.info {
+	background-color: rgb(23, 206, 197);
+	padding: 5px;
+	border-radius: 10px;
+	height: 325px;
+}
+
+#des {
+	float: left;
+	position: relative;
+	width: 290px;
+	height: 120px;
+	margin-left: 20px;
+}
+
+.weblink {
+	color: white;
+}
+
+.weblink:hover {
+	color: black;
+}
+
+.flip {
+	animation-name: flip;
+	animation-duration: 1.2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+.flipBack {
+	animation-name: flipBack;
+	animation-duration: 1.2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+@keyframes flip {
+	50% {
+		transform: scale(0, 1) skewy(-5deg);
+	}
+	51% {
+		transform: scale(0, 1) skewy(5deg);
+	}
+	100% {
+		width: 500px;
+		height: 400px;
+		background-color: lightseagreen;
+	}
+}
+
+@keyframes flipBack {
+	0% {
+		width: 500px;
+		height: 300px;
+		background-color: lightseagreen;
+	}
+	50% {
+		transform: scale(0, 1) skewy(5deg);
+	}
+	51% {
+		transform: scale(0, 1) skewy(-5deg);
+	}
+	100% {
+	}
 }
