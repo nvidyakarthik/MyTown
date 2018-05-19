@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="/js/myTown.js"></script>
+    <script src="/js/home.js"></script>
 
 <body>
      
@@ -33,15 +34,11 @@
                     
             </div>
 
-            <a href="/home">
+            <a href="/">
             <h1 id="title">My Town</h1>
             </a>
             <input type="text" placeholder="Search by location" id="searchbar">
         </div>
-        {{!-- Displayed user for testing have to change place in jumbotron --}}
-        {{#if user}}
-    
-        {{/if}}
-	   {{{ body }}}
+        {{{ body }}}
 </body>
 </html>
