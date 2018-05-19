@@ -1,48 +1,61 @@
 <div id="container">
-        
-        <div id="jumbo">
-            <div class="topnav">
-                <a href="/login">Sign In</a>
-                <a href="/newaccount">Create an Account</a>
-                <a href="/posts">Post a Place</a>
-            </div>
 
-            <a href="/home"><h1 id="title">My Town</h1></a>
-            <input type="text" placeholder="Search by location" id="searchbar">
+    <div id="jumbo">
+        <div class="topnav">
+            {{#if user}}
+            <a href="/logout">Sign Out</a>
+            {{else}}
+            <a href="/login">Sign In</a>
+            {{/if}}
+            <a href="/newaccount">Create an Account</a>
+            <a href="/posts">Post a Place</a>
+
         </div>
-        
-        <div class="row">
 
-            <div class="col-2">
-            </div>
+        <a href="/home">
+            <h1 id="title">My Town</h1>
+        </a>
+        <input type="text" placeholder="Search by location" id="searchbar">
+    </div>
 
-            <div class="col-5">
-                <h3 class="subtitle">Sign In</h3>
-                <div id="login">
-                    <form action="/action_page.php">
-                        <div class="form-group">
-                            <label for="email">Email address:</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
+    <div class="row">
 
-                        <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd">
-                        </div>
+        <div class="col-2">
+        </div>
 
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Remember me</label>
-                        </div>
+        <div class="col-5">
+            <h3 class="subtitle">Sign In</h3>
+            <div id="login">
+                {{#if error_msg}}
+                <div class="alert alert-danger">{{error_msg}}</div>
+                {{/if}} {{#if success_msg}}
+                <div class="alert alert-success">{{sucess_msg}}</div>
+                {{/if}}
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
 
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div>
-            </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
 
-            <div class="col-5">
-                <h3 class="subtitle">Happening this Weekend</h3>
-                <div id="weekend">
-                </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
             </div>
         </div>
+
+        <div class="col-5">
+            <h3 class="subtitle">Happening this Weekend</h3>
+            <div id="weekend">
+            </div>
+        </div>
+    </div>
 </div>

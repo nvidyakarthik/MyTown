@@ -2,9 +2,14 @@
 
     <div id="jumbo">
         <div class="topnav">
-            <a href="/login">Sign In</a>
+            {{#if user}}
+                <a href="/logout">Sign Out</a>
+            {{else}}
+                <a href="/login">Sign In</a>
+            {{/if}}
             <a href="/newaccount">Create an Account</a>
             <a href="/posts">Post a Place</a>
+            
         </div>
 
         <a href="/home">
@@ -67,6 +72,7 @@
 
 
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <input type="hidden" id="userid" name="userid" value="{{user.id}}">
             </form>
         </div>
 

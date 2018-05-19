@@ -6,30 +6,14 @@ module.exports = function (app) {
 
     });
 
-    app.get("/login", function (req, res) {
+   /*  app.get("/login", function (req, res) {
         res.render("login");
-    });
+    }); */
 
     app.get("/home", function (req, res) {
         res.render("index");
     });
     
-    app.get("/newaccount", function (req, res) {
-        res.render("newaccount");
-    });
-
-    app.get("/posts", function (req, res) {
-        db.Categories.findAll({
-
-        }).then(function (categoryData) {
-            var categoryObject = {
-                categoryList: categoryData
-            };
-            //console.log(categoryObject);
-            res.render("createpost", categoryObject);
-        });
-        
-    });
     app.get("/api/categories", function (req, res) {
         db.Categories.findAll({
 
