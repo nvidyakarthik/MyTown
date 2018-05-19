@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#eventLocation').load(function() {
+    /* $('#eventLocation').load(function() {
       let city = $('#location').val();
       $('#location').val("");
       $.ajax({
@@ -29,9 +29,27 @@ $(document).ready(function() {
         }
       });
     });
-  });
+ */
+    $.get("/api/categories", function(data) {
+      for(var i=0;i<data.length;i++){
+         $( "#filters" ).append("<div class='categories'><a href='#' id="+data[i].id+">"+data[i].categoryName+"</a></div>");
 
-  function formatDate(date){
+      }
+    });
+
+      $.get("/api/allPosts", function(data) {
+        for(var i=0;i<data.length;i++){
+           $( "#activities" ).append("<div class='posts'><a href='#' id="+data[i].id+">"+data[i].name+"</a></div>");
+  
+        }
+      
+      
+
+    });
+ 
+
+  /* function formatDate(date){
       var formattedDate=moment(date).format('LLL');
       return formattedDate;
-  }
+  } */
+});
