@@ -36,12 +36,13 @@ module.exports = function (passport, user) {
         },
 
         function (req, email, password, done) {
+            console.log(req);
 
-
+            console.log("INside");
             var generateHash = function (password) {
                 return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
             };
-
+             
             User.findOne({ where: { email: email } }).then(function (user) {
 
                 if (user) {
@@ -55,7 +56,8 @@ module.exports = function (passport, user) {
                             email: email,
                             password: userPassword,
                             firstname: req.body.firstname,
-                            lastname: req.body.lastname
+                            lastname: req.body.lastname,
+                            
                             
                         };
 

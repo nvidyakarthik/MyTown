@@ -15,6 +15,12 @@ exports.dashboard = function(req, res) {
     res.render('index');
  
 }
+exports.newacc = function(req, res) {
+    console.log(req.body);
+ 
+    res.render('index');
+ 
+}
 
 exports.posts = function(req, res) {
     db.Categories.findAll({
@@ -32,6 +38,7 @@ exports.posts = function(req, res) {
 exports.logout = function(req, res) {
  
     req.session.destroy(function(err) {
+        console.log("you are logged out");
  
         res.redirect('/');
  
