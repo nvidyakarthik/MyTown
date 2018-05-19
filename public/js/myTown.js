@@ -13,7 +13,8 @@ $(document).ready(function () {
         var description = $("#description").val().trim();
         var tag = $("#tag").val();
         var kid = $("#kidFriendly").val();
-
+        var userid=$("#userid").val();
+        
         var newPost = {
             name: placeName,
             street: street,
@@ -24,7 +25,9 @@ $(document).ready(function () {
             picLink: picLink,
             description: description,
             tag: tag,
-            kid: kid
+            kid: kid,
+            UserId:userid,
+            CategoryId:tag
         };
 
         if (!placeName || !city || !state || !picLink || !description || !tag) {
