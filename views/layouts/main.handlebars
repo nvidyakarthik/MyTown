@@ -17,11 +17,31 @@
     <script src="/js/myTown.js"></script>
 
 <body>
-     <p id="welcome"></p>
-    {{!-- Displayed user for testing have to change place in jumbotron --}}
-    {{#if user}}
-     <div id="welcome" style="color:green;">Welcome {{user.firstname}} {{user.lastname}}</div>
-     {{/if}}
-	{{{ body }}}
+     <div class="container">
+
+        <div id="jumbo">
+       
+            <div class="topnav">
+                {{#if user}}
+                    <a href="/logout">Sign Out</a>
+                {{else}}
+                    <a href="/login">Sign In</a>
+                 {{/if}}
+                    <a href="/newaccount">Create an Account</a>
+                     <div id="welcome">Welcome {{user.firstname}} {{user.lastname}}</div>
+                    <a href="/posts">Post a Place</a>
+            </div>
+
+            <a href="/home">
+            <h1 id="title">My Town</h1>
+            </a>
+            <input type="text" placeholder="Search by location" id="searchbar">
+        </div>
+        {{!-- Displayed user for testing have to change place in jumbotron --}}
+        {{#if user}}
+    
+        {{/if}}
+	   {{{ body }}}
+    </div>
 </body>
 </html>
