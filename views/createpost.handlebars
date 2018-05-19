@@ -1,4 +1,24 @@
-<div class="container">
+<div id="container">
+
+    <div id="jumbo">
+        <p id="welcome"></p>
+        <div class="topnav">
+            {{#if user}}
+            <a href="/logout">Sign Out</a>
+            {{else}}
+            <a href="/login">Sign In</a>
+            {{/if}}
+            <a href="/newaccount">Create an Account</a>
+            <a href="/posts">Post a Place</a>
+
+        </div>
+
+        <a href="/home">
+            <h1 id="title">My Town</h1>
+        </a>
+        <input type="text" placeholder="Search by location" id="searchbar">
+    </div>
+
     <div class="row">
 
         <div class="col-2">
@@ -21,17 +41,14 @@
                         <input type="text" class="form-control" id="city" placeholder="City-required">
                     </span>
                     <input type="text" class="form-control" id="state" placeholder="State-required">
-                    <span>
-                        <input type="text" class="form-control" id="zip" placeholder="Zip Code">
-                    </span>
                 </div>
 
                 <div class="form-group">
                     <input type="text" class="form-control" id="siteLink" placeholder="Link to site">
                 </div>
 
-               <div class="form-group">
-                    <input type="text" class="form-control" id="picLink" placeholder="Link to site">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="picLink" placeholder="Link to picture">
                 </div>
 
                 <div class="form-group">
@@ -39,10 +56,10 @@
                 </div>
 
                 <div class="form-group">
-                    <select class="form-control" id="tag">
-                        {{#each  categoryList}} 
-                            <option value="{{id}}">{{categoryName}}</option>                         
-                         {{/each}}
+                    <select class="form-control" id="category">
+                        {{#each categoryList}}
+                        <option value="{{id}}">{{categoryName}}</option>
+                        {{/each}}
                     </select>
                 </div>
 
