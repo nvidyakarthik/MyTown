@@ -4,13 +4,13 @@
         <p id="welcome"></p>
         <div class="topnav">
             {{#if user}}
-                <a href="/logout">Sign Out</a>
+            <a href="/logout">Sign Out</a>
             {{else}}
-                <a href="/login">Sign In</a>
+            <a href="/login">Sign In</a>
             {{/if}}
             <a href="/newaccount">Create an Account</a>
             <a href="/posts">Post a Place</a>
-            
+
         </div>
 
         <a href="/home">
@@ -50,8 +50,8 @@
                     <input type="text" class="form-control" id="siteLink" placeholder="Link to site">
                 </div>
 
-               <div class="form-group">
-                    <input type="text" class="form-control" id="picLink" placeholder="Link to site">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="picLink" placeholder="Link to picture">
                 </div>
 
                 <div class="form-group">
@@ -59,10 +59,10 @@
                 </div>
 
                 <div class="form-group">
-                    <select class="form-control" id="tag">
-                        {{#each  categoryList}} 
-                            <option value="{{id}}">{{categoryName}}</option>                         
-                         {{/each}}
+                    <select class="form-control" id="category">
+                        {{#each categoryList}}
+                        <option value="{{id}}">{{categoryName}}</option>
+                        {{/each}}
                     </select>
                 </div>
 
