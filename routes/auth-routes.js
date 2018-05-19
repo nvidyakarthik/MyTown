@@ -28,7 +28,6 @@ module.exports = function (app, passport) {
 
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated()) {
-            console.log("You are logged In");
             return next();
         }
         console.log("You are not logged In");

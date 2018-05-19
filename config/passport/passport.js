@@ -109,27 +109,26 @@ module.exports = function (passport, user) {
             User.findOne({ where: { email: email } }).then(function (user) {
 
                 if (!user) {
-                    return done(null, false, { message: 'Email does not exist' });
+                    return done(null, false, req.flash('error_msg', 'Email does not exist'));
                 }
 
-                if (!isValidPassword(user.password, password)) {
-
-                    return done(null, false, { message: 'Incorrect password.' });
+                if (!isValidPassword(user.password, password)) {                           
+        
+                    return done(null, false, req.flash('error_msg', 'Incorrect password.' ));
 
                 }
 
                 var userinfo = user.get();
-
                 return done(null, userinfo);
 
             }).catch(function (err) {
 
                 console.log("Error:", err);
 
-                return done(null, false, { message: 'Something went wrong with your Signin' });
+                return done(null, false, req.flash('message', 'Something went wrong with your Signin' ));
 
 
-            });
+            })
 
         }
     ));
