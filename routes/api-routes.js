@@ -6,21 +6,14 @@ module.exports = function (app) {
 
     });
 
-    app.get("/login", function (req, res) {
+   /*  app.get("/login", function (req, res) {
         res.render("login");
-    });
+    }); */
 
     app.get("/home", function (req, res) {
         res.render("index");
     });
     
-    app.get("/newaccount", function (req, res) {
-        res.render("newaccount");
-    });
-
-    app.get("/posts", function (req, res) {
-        res.render("createpost");
-    });
     app.get("/api/categories", function (req, res) {
         db.Categories.findAll({
 
