@@ -69,3 +69,16 @@ input[type="text"] {
 #zip {
 	width: 130px;
 }
+
+#pendingpost {
+	margin-top: 10px;
+}
+
+#approve {
+	background-color: green;
+
+}
+
+#delete {
+	background-color: red;
+}

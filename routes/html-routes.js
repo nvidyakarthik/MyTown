@@ -10,30 +10,13 @@ function displayMap() {
 
 		var dataArray = response.data;
 
-		$("#mood-view").empty();
+		for (var i = 0; i< dataArray.length; i++){
 
-		for (var i = 0; i < dataArray.length; i++){
+			var mapDIV = $("<div>");
 
-		//tried showDiv and #gif-area with same results. 
-		var moodDiv = $("<div>");
+			mapDIV.addClass("map")
+		}
 
-		moodDiv.addClass("moodGif");
-
-		var pRating = $("<p>").html("Rating: " + dataArray[i].rating);
-
-		moodDiv.append(pRating);
-
-		var newImg = $("<img>");
-
-		newImg.attr("src", dataArray[i].images.fixed_height_still.url);
-      	newImg.attr("data-still", dataArray[i].images.fixed_height_still.url);
-      	newImg.attr("data-animate", dataArray[i].images.fixed_height.url);
-      	newImg.attr("data-state", "still");
-      	moodDiv.append(newImg);
-
-
-      	$("#mood-view").append(moodDiv);
-   
-	}
+		
 });
 }
