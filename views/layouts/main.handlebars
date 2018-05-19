@@ -17,6 +17,10 @@
     <script src="/js/myTown.js"></script>
 
 <body>
+    {{!-- Displayed user for testing have to change place in jumbotron --}}
+    {{#if user}}
+     <div id="welcome" style="color:green;">Welcome {{user.firstname}} {{user.lastname}}</div>
+     {{/if}}
 	{{{ body }}}
 </body>
 </html>

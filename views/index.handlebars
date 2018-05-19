@@ -1,52 +1,57 @@
 <div id="container">
-        
-        <div id="jumbo">
-            <div class="topnav">
-                <a href="/login">Sign In</a>
-                <a href="/newaccount">Create an Account</a>
-                <a href="/posts">Post a Place</a>
-                <a href="/logout">Sign Out</a>
-            </div>
 
-            <h1 id="title">My Town</h1>
-            <input type="text" placeholder="Search by location" id="searchbar">
+    <div id="jumbo">
+        <div class="topnav">
+           
+            {{#if user}}
+            <a href="/logout">Sign Out</a>
+            {{else}}
+            <a href="/login">Sign In</a>
+            {{/if}}
+            <a href="/newaccount">Create an Account</a>
+            <a href="/posts">Post a Place</a>
+
         </div>
-        
-        <div class="row">
 
-            <div class="col-2">
-                <h4 class="subtitle">Filter By:</h4>
-                <div id="filters">
-                    <ul>
-                    {{#each categoryList}} 
-                         <li>
-                            <a href="#" id="{{categoryName}}">{{categoryName}}</a>
-              
-                        </li>
+        <h1 id="title">My Town</h1>
+        <input type="text" placeholder="Search by location" id="searchbar">
+    </div>
+
+    <div class="row">
+
+        <div class="col-2">
+            <h4 class="subtitle">Filter By:</h4>
+            <div id="filters">
+                <ul>
+                    {{#each categoryList}}
+                    <li>
+                        <a href="#" id="{{categoryName}}">{{categoryName}}</a>
+
+                    </li>
                     {{/each}}
-                  </ul>
-                </div>
-            </div>
-
-
-            <div class="col-6">
-                <h3 class="subtitle">Things to Always Do</h3>
-                <div id="activities">  
-                    <ul>
-                    {{#each activities}} 
-                         <li>
-                            <a href="#" id="{{name}}">{{name}},{{location}}</a>
-              
-                        </li>
-                    {{/each}}
-                  </ul> 
-                </div>
-            </div>
-        
-            <div class="col-4">
-                <h3 class="subtitle">Happening this Weekend</h3>
-                <div id="weekend">
-                </div>
+                </ul>
             </div>
         </div>
+
+
+        <div class="col-6">
+            <h3 class="subtitle">Things to Always Do</h3>
+            <div id="activities">
+                <ul>
+                    {{#each activities}}
+                    <li>
+                        <a href="#" id="{{name}}">{{name}},{{location}}</a>
+
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <h3 class="subtitle">Happening this Weekend</h3>
+            <div id="weekend">
+            </div>
+        </div>
+    </div>
 </div>
