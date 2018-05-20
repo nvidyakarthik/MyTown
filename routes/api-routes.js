@@ -10,6 +10,7 @@ module.exports = function (app) {
         res.render("login");
     }); */
 
+     
     app.get("/api/categories", function (req, res) {
         db.Categories.findAll({
 
@@ -25,7 +26,11 @@ module.exports = function (app) {
     });
     
     app.get("/api/allPosts", function (req, res) {
-        db.Posts.findAll({}).then(function (activityData) {
+        db.Posts.findAll({
+            where: {
+              approved: 1
+            }
+        }).then(function (activityData) {
             var activityObject = {
                 activities: activityData
             };
