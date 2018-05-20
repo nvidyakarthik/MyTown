@@ -39,10 +39,10 @@ $(document).ready(function() {
 
       $.get("/api/allPosts", function(data) {
         for(var i=0;i<data.length;i++){
-           $( "#activities" ).append("<div class='posts'><a href='#' id="+data[i].id+">"+data[i].name+"</a></div>");
+           $( "#activities" ).append("<div class='posts'><a href='/api/posts/:"+data[i].id+"'>"+data[i].name+"</a></div>");
   
         }
-      
+   
       
 
     });
