@@ -52,7 +52,7 @@ $(document).ready(function () {
       $("#activities").append("<div class='posts' id=post" + id + "></div>");
 
       $("#post" + id).append("<h6>" + data[i].name + " " + kidfriendly +"</h6");
-      $("#post" + id).append("<img src=" + data[i].picturelink + " alt=" + data[i].name + " id=pic" + id + " class=displayPic>");
+      $("#post" + id).append("<img src=" + data[i].picturelink + " alt=" + data[i].name + " id=picpost" + id + " class=displayPic>");
       $("#post" + id).append("<div hidden class='info' id=" + infoId + "></div>");
 
       console.log(data[i].description);
@@ -80,10 +80,10 @@ $(document).ready(function () {
   function flip() {
     if ($(this).attr("class") === "posts" || $(this).attr("class") === "posts flipBack") {
       $(this).removeClass("flipBack").addClass("flip");
-      $("#pic" + this.id).addClass("displayPicBorder");
 
       setTimeout(() => {
         $("#info"+this.id).removeAttr("hidden").show();
+        $("#pic" + this.id).addClass("displayPicBorder");
       }, 1000 * 0.5);
     } 
     
