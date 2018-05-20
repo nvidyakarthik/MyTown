@@ -23,7 +23,10 @@ module.exports = function(sequelize, DataTypes){
             type:DataTypes.TEXT,
             allowNull:false
         },
-        kidfriendly:DataTypes.BOOLEAN,
+        kidfriendly:{
+            type: DataTypes.BOOLEAN ,
+            defaultValue:0 
+         } ,
         approved:{
            type: DataTypes.BOOLEAN ,
            defaultValue:0 

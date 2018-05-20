@@ -17,8 +17,8 @@ $(document).ready(function () {
         var kidFriendly;
 
         if (kid) {
-            kidFriendly = true;
-        } else {kidFriendly = false};
+            kidFriendly = 1;
+        } else {kidFriendly = 0};
         
         var newPost = {
             name: placeName,
