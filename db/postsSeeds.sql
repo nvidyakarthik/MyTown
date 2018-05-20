@@ -1,3 +1,5 @@
+uSE mytown_db;
+
 INSERT INTO posts (name, location, websitelink, picturelink, description, kidfriendly) VALUES
 ("Phoenix Art Museum", "1625 N. Central Avenue, Phoenix, AZ", "http://www.phxart.org/", "https://a.travel-assets.com/findyours-php/viewfinder/images/res60/34000/34402-Phoenix-Art-Museum.jpg", "I love this place, especially on First Fridays when it's free. Lots of great art and acivities.", true),
 ("Riverview Park", "2100 W. Rio Salado Parkway, Mesa, AZ", "http://www.mesaparks.com/parks-facilities/parks/riverview-park", "http://www.mesaparks.com/Home/ShowImage?id=16070&amp;t=636493827510530000", "My family has been coming here forever, even before the remodel. It's been a hiden gem and is now an even better place to play.", true),

@@ -40,7 +40,7 @@ $(document).ready(function () {
   $.get("/api/allPosts", function (data) {
     for (var i = 0; i < data.length; i++) {
       var id = data[i].id;
-      var infoId = "info" + id;
+      var infoId = "infopost" + id;
       var address = data[i].street + ", " + data[i].city + ", " + data[i].state;
       var kidfriendly;
 
@@ -49,13 +49,16 @@ $(document).ready(function () {
       } else {
         kidfriendly = "";
       };
-      console.log(kidfriendly);
 
-      $("#activities").append("<div class='posts' id=" + id + "></div>");
+      $("#activities").append("<div class='posts' id=post" + id + "></div>");
 
-      $("#" + id).append("<h6>" + data[i].name + " " + kidfriendly +"</h6");
-      $("#" + id).append("<img src=" + data[i].picturelink + " alt=" + data[i].name + " id=pic" + id + " class=displayPic>");
-      $("#" + id).append("<div hidden class='info' id=" + infoId + "></div>");
+      $("#post" + id).append("<h6>" + data[i].name + " " + kidfriendly +"</h6");
+      $("#post" + id).append("<img src=" + data[i].picturelink + " alt=" + data[i].name + " id=pic" + id + " class=displayPic>");
+      $("#post" + id).append("<div hidden class='info' id=" + infoId + "></div>");
+
+      console.log(data[i].description);
+      console.log(data[i].websitelink);
+      console.log(address);
 
       $("#" + infoId).append("<div id='des'><h6 class='des'><u>Review:</u></h6>" + data[i].description + "</div>");
       //$("#" + infoId).append("<br><h6 class='address'><u>Map:</u></h6>");
@@ -82,13 +85,15 @@ $(document).ready(function () {
 
       setTimeout(() => {
         $("#info"+this.id).removeAttr("hidden").show();
-      }, 1000 * 1.2);
+      }, 1000 * 0.5);
     } 
     
     else if ($(this).attr("class") === "posts flip") {
       $(this).removeClass("flip").addClass("flipBack");
-      $("#info"+this.id).hide();
-      $("#pic" + this.id).removeClass("displayPicBorder");
+      setTimeout(() => {
+        $("#info"+this.id).hide();
+        $("#pic" + this.id).removeClass("displayPicBorder");
+      }, 1000 * 0.5);
     }
 
   };
