@@ -23,14 +23,21 @@
         <div id="jumbo">
        
             <div class="topnav">
+                {{#if user.admin}}
+                    <a href="/admin">admin</a>
+                 {{/if}} 
                 {{#if user}}
                     <a href="/logout">Sign Out</a>
+                     <a href="/posts">Post a Place</a> 
+                    <a href="#">Welcome {{user.firstname}} {{user.lastname}}</a>
+                    
+                    
                 {{else}}
                     <a href="/login">Sign In</a>
-                 {{/if}}
+                     <a href="/posts">Post a Place</a>  
                     <a href="/newaccount">Create an Account</a>
-                    <a href="/posts">Post a Place</a>
-                     <div id="welcome">Welcome {{user.firstname}} {{user.lastname}}</div>
+                 {{/if}}                        
+                        
                     
             </div>
 
