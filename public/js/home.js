@@ -37,15 +37,72 @@ $(document).ready(function() {
       }
     });
 
-      $.get("/api/allPosts", function(data) {
-        for(var i=0;i<data.length;i++){
-           $( "#activities" ).append("<div class='posts'><a href='/api/posts/:"+data[i].id+"'>"+data[i].name+"</a></div>");
-  
-        }
-   
-      
+  $.get("/api/categories", function (data) {
+    for (var i = 0; i < data.length; i++) {
+      $("#filters").append("<div class='categories'><a href='#' id=" + data[i].id + ">" + data[i].categoryName + "</a></div>");
+    }
+  });
 
-    });
+  $.get("/api/allPosts", function (data) {
+    for (var i = 0; i < data.length; i++) {
+      var id = data[i].id;
+      var infoId = "info" + id;
+      var address = data[i].street + ", " + data[i].city + ", " + data[i].state;
+      var kidfriendly;
+
+      if (data[i].kidfriendly) {
+        kidfriendly = "<img src='../images/kidfriendly.png' alt='Kid Friendly!' width='30px'>";
+      } else {
+        kidfriendly = "";
+      };
+      console.log(kidfriendly);
+
+      $("#activities").append("<div class='posts' id=" + id + "></div>");
+
+      $("#" + id).append("<h6>" + data[i].name + " " + kidfriendly +"</h6");
+      $("#" + id).append("<img src=" + data[i].picturelink + " alt=" + data[i].name + " id=pic" + id + " class=displayPic>");
+      $("#" + id).append("<div hidden class='info' id=" + infoId + "></div>");
+
+      $("#" + infoId).append("<div id='des'><h6 class='des'><u>Review:</u></h6>" + data[i].description + "</div>");
+      //$("#" + infoId).append("<br><h6 class='address'><u>Map:</u></h6>");
+      $("#" + infoId).append("<div id='map'></div>");
+      $("#" + infoId).append("<div class='address'>" + address + "</div>");
+      $("#" + infoId).append('<a class="weblink" target="_blank" href="'+ data[i].websitelink +'">Website</a>');
+
+
+
+      "<a href='#' id=" + data[i].id + ">" + data[i].name + "</a>"
+      var posts = $("")
+
+    }
+
+
+
+  });
+
+
+  function flip() {
+    if ($(this).attr("class") === "posts" || $(this).attr("class") === "posts flipBack") {
+      $(this).removeClass("flipBack").addClass("flip");
+      $("#pic" + this.id).addClass("displayPicBorder");
+
+      setTimeout(() => {
+        $("#info"+this.id).removeAttr("hidden").show();
+      }, 1000 * 1.2);
+    } 
+    
+    else if ($(this).attr("class") === "posts flip") {
+      $(this).removeClass("flip").addClass("flipBack");
+      $("#info"+this.id).hide();
+      $("#pic" + this.id).removeClass("displayPicBorder");
+    }
+
+  };
+
+  $(document).on("click", ".posts", flip);
+
+
+  
  
 
   /* function formatDate(date){
