@@ -55,10 +55,6 @@ $(document).ready(function () {
       $("#post" + id).append("<img src=" + data[i].picturelink + " alt=" + data[i].name + " id=picpost" + id + " class=displayPic>");
       $("#post" + id).append("<div hidden class='info' id=" + infoId + "></div>");
 
-      console.log(data[i].description);
-      console.log(data[i].websitelink);
-      console.log(address);
-
       $("#" + infoId).append("<div id='des'><h6 class='des'><u>Review:</u></h6>" + data[i].description + "</div>");
       //$("#" + infoId).append("<br><h6 class='address'><u>Map:</u></h6>");
       $("#" + infoId).append("<div id='map'></div>");
