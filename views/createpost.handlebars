@@ -6,6 +6,9 @@
         </div>
 
         <div class="col-5">
+
+            <div id="missingInput" hidden></div>
+
             <h3 class="subtitle">Post a Place</h3>
             <form id="placePost">
                 <div class="form-group">
@@ -37,6 +40,7 @@
                 </div>
 
                 <div class="form-group">
+                    <h6>Please choose a category:</h6>
                     <select class="form-control" id="category">
                         {{#each categoryList}}
                         <option value="{{id}}">{{categoryName}}</option>
@@ -45,8 +49,8 @@
                 </div>
 
                 <div class="checkbox">
-                    <label id="kidFriendly">
-                        <input type="checkbox" value="true">Kid Friendly</label>
+                    <input type="checkbox" id="kidCheck" name="kidfriendly" value="kid">
+                    <label for="kidCheck">Kid Friendly</label>
                 </div>
 
 
@@ -62,19 +66,5 @@
         </div>
     </div>
 
-    <div class="modal" id="postModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Oops!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>One or more of the required fields is missing, please check your submission.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>

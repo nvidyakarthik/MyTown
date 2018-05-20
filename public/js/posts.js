@@ -11,12 +11,12 @@ $(document).ready(function () {
         var picLink = $("#picLink").val().trim();
         var description = $("#description").val().trim();
         var category = $("#category").val();
-        var kid = $("#kidFriendly").val();
-        var userid=$("#userid").val();
+        var kid = document.querySelector('input[value="kid"]');
+        var userid=$("#userid").attr("value");
 
         var kidFriendly;
 
-        if (kid) {
+        if (kid.checked) {
             kidFriendly = true;
         } else {kidFriendly = false};
         
@@ -29,16 +29,17 @@ $(document).ready(function () {
             picturelink: picLink,
             description: description,
             kidfriendly: kidFriendly,
-            UserId:userid,
-            CategoryId:category
+            UserId: userid,
+            CategoryId: category
         };
 
-        if (!placeName || !city || !state || !picLink || !description || !category) {
+        if (!placeName || !city || !state || !picLink || !description) {
             //$("#postModal").modal("show");
-            alert("One or more of the required fields is missing, please check your submission.")
+            $("#missingInput").text("One or more of the required fields is missing, please check your submission.").removeAttr("hidden");
+            //alert("One or more of the required fields is missing, please check your submission.")
         } else {
             $.post("/api/posts", newPost, function () {
-                alert("Thank you for submitting a post! Your post is now waiting for review before being published.")
+                alert("Your place has been submitted and will be posted pending review.");
                 window.location.href = "/";
             });
             
@@ -47,7 +48,6 @@ $(document).ready(function () {
 
     });
 
-    $("")
 
 
 });
