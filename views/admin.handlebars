@@ -7,25 +7,20 @@
             <div class="col-5">
                 <h3 class="subtitle">Approve Post</h3>
                 <div id="pendingposts">
-                   <div class="card">
+                    {{#each approvalList}}
+                     <div class="card">
                         <div class="card-body" id="pendingpost">
-                           <div id="postinfo"></div>
+                           <div id="postinfo">
+                             <span>{{name}}</span>
+                             <span>{{description}}</span>
+                            </div>                            
                         </div>
                     </div>
                     <span>
-                        <button type="button" class="btn btn-primary btn-sm" id="approve">Approve</button>
-                        <button type="button" class="btn btn-secondary btn-sm" id="delete">Delete</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="{{id}}">Approve</button>
+                            <button type="button" class="btn btn-secondary btn-sm" id="{{id}}">Delete</button>
                     </span>
-
-                    <div class="card">
-                        <div class="card-body" id="pendingpost">
-                           <div id="postinfo"></div>
-                        </div>
-                    </div>
-                    <span>
-                        <button type="button" class="btn btn-primary btn-sm" id="approve">Approve</button>
-                        <button type="button" class="btn btn-secondary btn-sm" id="delete">Delete</button>
-                    </span>
+                    {{/each}}
                 </div>
             </div>
 

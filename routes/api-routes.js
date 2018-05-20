@@ -10,10 +10,6 @@ module.exports = function (app) {
         res.render("login");
     }); */
 
-    /* app.get("/home", function (req, res) {
-        res.render("index");
-    }) */;
-    
     app.get("/api/categories", function (req, res) {
         db.Categories.findAll({
 
@@ -48,7 +44,8 @@ module.exports = function (app) {
             var activityObject = {
                 activities: activityData
             };
-            console.log(activityObject);
+            //console.log(activityObject);
+            //res.json(activityData);
             res.render("index", activityObject);
         });
 
@@ -67,7 +64,7 @@ module.exports = function (app) {
         });
     });
 
-    app.get("/api/posts", function (req, res) {
+    app.get("/admin", function (req, res) {
         db.Posts.findAll({
             where: {
                 approved: 0
@@ -77,7 +74,7 @@ module.exports = function (app) {
                 approvalList: approvalListData
             };
             console.log(approveListObject);
-            res.render("postApprove", approveListObject);
+            res.render("admin", approveListObject);
         });
     });
 

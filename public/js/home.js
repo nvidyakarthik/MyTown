@@ -33,7 +33,6 @@ $(document).ready(function () {
   $.get("/api/categories", function (data) {
     for (var i = 0; i < data.length; i++) {
       $("#filters").append("<div class='categories'><a href='#' id=" + data[i].id + ">" + data[i].categoryName + "</a></div>");
-
     }
   });
 
@@ -99,6 +98,7 @@ $(document).ready(function () {
   };
 
   $(document).on("click", ".posts", flip);
+
 
 
   /* function formatDate(date){
