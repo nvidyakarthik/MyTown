@@ -61,11 +61,13 @@ input[type="text"] {
 #city {
 	width: 250px;
 	float: left;
+	margin: 0 10px 10px 0;
 }
 
 #state {
 	width: 150px;
 	float: left;
+	margin: 0 10px 10px 0;
 }
 
 #zip {
@@ -159,6 +161,15 @@ input[type="text"] {
 	color: white;
 }
 
+#missingInput, #passMatch {
+	border: 2px solid tomato;
+	border-radius: 5px;
+	color: tomato;
+	padding: 5px;
+	margin-top: 20px;
+	text-align: center;
+}
+
 h6 {
 	height: 30px;
 }
@@ -173,7 +184,7 @@ h6 {
 }
 
 .displayPicBorder {
-	border: 4px solid rgb(28, 230, 219);
+	border: 4px solid rgb(23, 206, 197);
 	border-radius: 10px;
 }
 
@@ -195,7 +206,6 @@ h6 {
 	background-color: rgb(23, 206, 197);
 	padding: 5px;
 	border-radius: 10px;
-	height: 325px;
 }
 
 #des {
@@ -232,7 +242,7 @@ h6 {
 	50% {
 		transform: scale(0, 1) skewy(-5deg);
 	}
-	51% {
+	50.1% {
 		transform: scale(0, 1) skewy(5deg);
 	}
 	100% {
@@ -251,7 +261,7 @@ h6 {
 	50% {
 		transform: scale(0, 1) skewy(5deg);
 	}
-	51% {
+	50.1% {
 		transform: scale(0, 1) skewy(-5deg);
 	}
 	100% {
