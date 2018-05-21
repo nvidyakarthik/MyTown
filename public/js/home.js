@@ -82,7 +82,7 @@ $(document).ready(function() {
 
 
 
-  });
+  });*/
 
 
   function flip() {
@@ -105,10 +105,7 @@ $(document).ready(function() {
 
   };
 
-  $(document).on("click", ".posts", flip);*/
-
-
-  
+  $(document).on("click", ".posts", flip);
  
 
   /* function formatDate(date){
