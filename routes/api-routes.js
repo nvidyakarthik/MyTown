@@ -13,8 +13,8 @@ module.exports = function (app) {
 
             }).then(function (categoryData) {
                 activityObject.categoryList=categoryData;
-               
-               // res.json(activityObject);
+        
+                // res.json(activityObject);
                 //console.log(categoryObject);
                 res.render("index",activityObject);
             });
@@ -54,7 +54,8 @@ module.exports = function (app) {
         console.log(req.params.id);
         db.Posts.findAll({
             where: {
-                CategoryId: req.params.id
+                CategoryId: req.params.id,
+                approved:1
             }
         }).then(function (activityData) {
             activityObject.activities=activityData
