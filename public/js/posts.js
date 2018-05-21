@@ -53,16 +53,7 @@ $(document).ready(function () {
         
         var city = $("#cityname").val().trim();
         alert(city);
-        
-     $.ajax({
-      type: 'GET',
-     
-      url: '/api/posts/city/'+city
-    }).then(function(data){
-      console.log(data);
-      
-
-    });
+        window.location.href='/api/posts/city/'+city;   
       
     });
     
