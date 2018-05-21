@@ -46,7 +46,7 @@ module.exports = function (passport, user) {
             User.findOne({ where: { email: email } }).then(function (user) {
 
                 if (user) {
-                    return done(null, false, { message: 'That email is already taken' });
+                    return done(null, false, req.flash('error_msg','That email is already taken'));
                 }
 
                 else {
