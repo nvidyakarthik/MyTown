@@ -30,19 +30,24 @@ $(document).ready(function() {
       });
     });
  */
-    $.get("/api/categories", function(data) {
-      for(var i=0;i<data.length;i++){
+    /* $.get("/api/categories", function(data) {
+       for(var i=0;i<data.length;i++){
          $( "#filters" ).append("<div class='categories'><a href='/api/posts/:"+data[i].id+"'>"+data[i].categoryName+"</a></div>");
 
-      }
+      } 
+    }); */ 
+
+    /* $.ajax({
+      type: 'GET',
+     
+      url: '/api/categories'
+    }).then(function(){
+      console.log("klk");
+      
+
     });
-
-  $.get("/api/categories", function (data) {
-    for (var i = 0; i < data.length; i++) {
-      $("#filters").append("<div class='categories'><a href='#' id=" + data[i].id + ">" + data[i].categoryName + "</a></div>");
-    }
-  });
-
+       */
+/* 
   $.get("/api/allPosts", function (data) {
     for (var i = 0; i < data.length; i++) {
       var id = data[i].id;
@@ -72,7 +77,7 @@ $(document).ready(function() {
 
 
       "<a href='#' id=" + data[i].id + ">" + data[i].name + "</a>"
-      var posts = $("")
+       var posts = $("")
 
     }
 
@@ -99,7 +104,7 @@ $(document).ready(function() {
 
   };
 
-  $(document).on("click", ".posts", flip);
+  $(document).on("click", ".posts", flip);*/
 
 
   
