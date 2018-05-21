@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-</head>
+
  	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,6 +17,8 @@
     <script src="/js/posts.js"></script>
     <script src="/js/home.js"></script>
     <script src="/js/password.js"></script>
+    <script src="/js/admin.js"></script>
+    </head>
 
 <body>
      
@@ -35,9 +37,9 @@
                     
                 {{else}}
                     <a href="/login">Sign In</a>
-                     <a href="/posts">Post a Place</a>  
+                    <a href="/posts">Post a Place</a>  
                     <a href="/newaccount">Create an Account</a>
-                 {{/if}}                        
+                 {{/if}}                      
                         
                     
             </div>
@@ -45,7 +47,9 @@
             <a href="/">
             <h1 id="title">My Town</h1>
             </a>
-            <input type="text" placeholder="Search by location" id="searchbar">
+     
+            <input type="text" placeholder="Search by location" id="cityname">
+            {{!-- <button type="submit" id="searchButton">Search</button>  --}}
         </div>
         {{{ body }}}
 </body>

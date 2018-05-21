@@ -6,6 +6,9 @@
 
             <div class="col-5">
                 <h3 class="subtitle">Approve Post</h3>
+                {{#unless approvalList}}
+                <div class="alert alert-success">All posts Approved.</div>
+                {{/unless}}
                 <div id="pendingposts">
                     {{#each approvalList}}
                      <div class="card">
@@ -17,8 +20,8 @@
                         </div>
                     </div>
                     <span>
-                            <button type="button" class="btn btn-primary btn-sm" id="{{id}}">Approve</button>
-                            <button type="button" class="btn btn-secondary btn-sm" id="{{id}}">Delete</button>
+                            <button type="button" class="btn btn-primary btn-sm approve" id="{{id}}">Approve</button>
+                            <button type="button" class="btn btn-secondary btn-sm delete" id="{{id}}">Delete</button>
                     </span>
                     {{/each}}
                 </div>

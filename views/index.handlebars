@@ -3,14 +3,42 @@
     <div class="col-2">
         <h4 class="subtitle">Filter By:</h4>
         <div id="filters">
+            
+            <ul>
+                {{#each categoryList}}
+                <li>
+                    <a href="/api/posts/{{id}}">{{categoryName}}</a>
 
+                </li>
+                {{/each}}
+            </ul>          
+            
         </div>
     </div>
 
 
     <div class="col-6">
         <h3 class="subtitle">Things to Always Do</h3>
-        <div id="activities"></div>
+        <div id="activities">
+            {{#each activities}}
+                <div class='posts' id='post{{id}}'>
+                    <h6>{{name}}
+                        {{#if kidfriendly}}
+                            <img src='../images/kidfriendly.png' alt='Kid Friendly!' width='30px'>
+                        {{/if}}                        
+                    </h6>
+                    <img src="{{picturelink}}"  alt="{{name}}" id="picpost{{id}}"  class="displayPic">
+                    <div hidden class='info' id='infopost{{id}}'>
+                        <div id='des'><h6 class='des'><u>Review:</u></h6>{{description}}</div>
+                        <!-- <br><h6 class='address'><u>Map:</u></h6> -->
+                        <div id='map'></div>
+                        <div class='address'>{{street}},{{city}},{{state}}</div>
+                        <a class="weblink" target="_blank" href="{{websitelink}}">Website</a>
+                    </div>
+                </div>  
+            {{/each}}
+            
+        </div>
     </div>
 
     <div class="col-4">

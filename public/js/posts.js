@@ -16,9 +16,9 @@ $(document).ready(function () {
 
         var kidFriendly;
 
-        if (kid.checked) {
-            kidFriendly = true;
-        } else {kidFriendly = false};
+        if (kid) {
+            kidFriendly = 1;
+        } else {kidFriendly = 0};
         
         var newPost = {
             name: placeName,
@@ -48,7 +48,22 @@ $(document).ready(function () {
 
     });
 
+    $("#searchButton").click(function() {
+        
+        var city = $("#cityname").val().trim();
+        alert(city);
+        
+     $.ajax({
+      type: 'GET',
+     
+      url: '/api/posts/city/'+city
+    }).then(function(data){
+      console.log(data);
+      
 
-
+    });
+      
+    });
+    
 });
 

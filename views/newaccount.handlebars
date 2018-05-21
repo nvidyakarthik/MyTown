@@ -6,6 +6,11 @@
 
             <div class="col-5">
                 <h3 class="subtitle">Create an Account</h3>
+                 {{#if error_msg}}
+                <div class="alert alert-danger">{{error_msg}}</div>
+                {{/if}} {{#if success_msg}}
+                <div class="alert alert-success">{{sucess_msg}}</div>
+                {{/if}}
                 <form action="/newaccount" method="post">
                     <div class="form-group">
                         <label for="firstname">First Name</label>
