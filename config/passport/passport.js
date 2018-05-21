@@ -120,7 +120,7 @@ module.exports = function (passport, user) {
 
                 var userinfo = user.get();
                 return done(null, userinfo);
-
+                               
             }).catch(function (err) {
 
                 console.log("Error:", err);
