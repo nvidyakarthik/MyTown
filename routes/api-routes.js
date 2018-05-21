@@ -1,16 +1,26 @@
 var db = require("../models");
 module.exports = function (app) {
     app.get("/", function (req, res) {
-       
-            res.render("index");     
+        var activityObject={};
+        db.Posts.findAll({
+            where: {
+              approved: 1
+            }
+        }).then(function (activityData) {
+            activityObject.activities=activityData;
+            
+            db.Categories.findAll({
 
-    });
-
-   /*  app.get("/login", function (req, res) {
-        res.render("login");
-    }); */
-
-     
+            }).then(function (categoryData) {
+                activityObject.categoryList=categoryData;
+               
+               // res.json(activityObject);
+                //console.log(categoryObject);
+                res.render("index",activityObject);
+            });
+        });
+    });          
+      
     app.get("/api/categories", function (req, res) {
         db.Categories.findAll({
 
@@ -18,14 +28,13 @@ module.exports = function (app) {
             var categoryObject = {
                 categoryList: categoryData
             };
-            res.json(categoryData);
+            res.json(categoryObject);
             //console.log(categoryObject);
-            //res.render("index", categoryObject);
+            //res.render("index",categoryObject);
         });
 
     });
-    
-    app.get("/api/allPosts", function (req, res) {
+        app.get("/api/allPosts", function (req, res) {
         db.Posts.findAll({
             where: {
               approved: 1
@@ -35,26 +44,30 @@ module.exports = function (app) {
                 activities: activityData
             };
             res.json(activityData);
-           // res.render("index", activityObject);
+           //res.render("index", activityObject);
         });
 
     });
 
     app.get("/api/posts/:id", function (req, res) {
+        var activityObject={};
+        console.log(req.params.id);
         db.Posts.findAll({
             where: {
                 CategoryId: req.params.id
             }
         }).then(function (activityData) {
-            var activityObject = {
-                activities: activityData
-            };
-            //console.log(activityObject);
-            //res.json(activityData);
-            res.render("index", activityObject);
-        });
+            activityObject.activities=activityData
+            db.Categories.findAll({
 
-    });
+            }).then(function (categoryData) {
+                activityObject.categoryList=categoryData;               
+                //res.json(activityObject);
+                //console.log(categoryObject);
+               res.render("index",activityObject);
+            });
+        });
+    });          
  
 
     app.post("/api/posts", function (req, res) {
@@ -94,4 +107,22 @@ module.exports = function (app) {
                 res.json(dbPost);
             });
     });
+    //This route is used for search posts by city
+    app.get("/api/posts/city/:city", function (req, res) {
+        console.log(req.params.city);
+        db.Posts.findAll({
+            where: {
+                city: req.params.city
+            }
+        }).then(function (postsByCityResults) {
+            var postsByCityObject = {
+                activities: postsByCityResults,
+                categoryList:{}
+            };
+           // console.log(locationListObject);
+           res.json(postsByCityObject);
+           // res.render("index",postsByCityObject);
+        });
+    });
+   
 };
