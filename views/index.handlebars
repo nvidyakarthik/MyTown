@@ -19,12 +19,15 @@
 
     <div class="col-6">
         <h3 class="subtitle">Things to Always Do</h3>
+        {{#unless activities}}
+            <div class="alert alert-warning">No posts found in this category.</div>
+        {{/unless}}
         <div id="activities">
             {{#each activities}}
                 <div class='posts' id='post{{id}}'>
                     <h6>{{name}}
                         {{#if kidfriendly}}
-                            <img src='../images/kidfriendly.png' alt='Kid Friendly!' width='30px'>
+                            <img src='/../images/kidfriendly.png' alt='Kid Friendly!' width='30px'>
                         {{/if}}                        
                     </h6>
                     <img src="{{picturelink}}"  alt="{{name}}" id="picpost{{id}}"  class="displayPic">

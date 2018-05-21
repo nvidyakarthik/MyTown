@@ -14,15 +14,18 @@
                      <div class="card">
                         <div class="card-body" id="pendingpost">
                            <div id="postinfo">
-                             <span>{{name}}</span>
-                             <span>{{description}}</span>
+                             <span>{{name}}</span><hr>
+                             <span>{{description}}</span><br>
+                             <span>city : {{city}}</span>
+                             <span> state : {{state}}</span>
                             </div>                            
                         </div>
-                    </div>
-                    <span>
+                        <span>
                             <button type="button" class="btn btn-primary btn-sm approve" id="{{id}}">Approve</button>
                             <button type="button" class="btn btn-secondary btn-sm delete" id="{{id}}">Delete</button>
                     </span>
+                    </div>
+                    
                     {{/each}}
                 </div>
             </div>

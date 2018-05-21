@@ -19,7 +19,7 @@ app.use(session({cookie: { maxAge: 60000 }}));
 app.use(flash());
 
 // For Passport
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret 
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:false})); // session secret 
 app.use(passport.initialize()); 
 app.use(passport.session()); // persistent login sessions
 

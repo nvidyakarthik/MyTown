@@ -21,6 +21,21 @@ exports.newacc = function(req, res) {
     res.render('index');
  
 }
+exports.admin=function (req, res) {
+    db.Posts.findAll({
+        where: {
+            approved: 0
+        }
+    }).then(function (approvalListData) {
+        console.log("length approval list data"+approvalListData.length);
+        
+        var approveListObject = {
+            approvalList: approvalListData
+        };
+        console.log(approveListObject);
+        res.render("admin", approveListObject);
+    });
+}
 
 exports.posts = function(req, res) {
     db.Categories.findAll({

@@ -48,7 +48,7 @@ module.exports = function (app) {
         });
 
     });
-
+//This route is used for filtering the post.
     app.get("/api/posts/:id", function (req, res) {
         var activityObject={};
         console.log(req.params.id);
@@ -70,34 +70,19 @@ module.exports = function (app) {
         });
     });          
  
-
+//This route is used to create new posts by the authorized user
     app.post("/api/posts", function (req, res) {
         db.Posts.create(req.body).then(function (postCreated) {
-            res.json('OK');
+            req.flash('success_msg','Your place has been submitted and will be posted pending review.');        
+            res.json('OK')
         });
     });
 
-    app.post("/api/users", function (req, res) {
+   /*  app.post("/api/users", function (req, res) {
         db.Users.create(req.body).then(function (userCreated) {
             res.json('OK');
         });
-    });
-//This route is used for the admin to approve posts
-    app.get("/admin", function (req, res) {
-        db.Posts.findAll({
-            where: {
-                approved: 0
-            }
-        }).then(function (approvalListData) {
-            console.log("length approval list data"+approvalListData.length);
-            
-            var approveListObject = {
-                approvalList: approvalListData
-            };
-            console.log(approveListObject);
-            res.render("admin", approveListObject);
-        });
-    });
+    }); */
 
     app.put("/api/posts", function (req, res) {
         db.Posts.update(

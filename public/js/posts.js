@@ -39,8 +39,9 @@ $(document).ready(function () {
             //alert("One or more of the required fields is missing, please check your submission.")
         } else {
             $.post("/api/posts", newPost, function () {
-                alert("Your place has been submitted and will be posted pending review.");
-                window.location.href = "/";
+                //alert("Your place has been submitted and will be posted pending review.");
+                //window.location.href = "/";
+                location.reload();
             });
             
 
