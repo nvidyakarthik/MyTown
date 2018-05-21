@@ -81,13 +81,15 @@ module.exports = function (app) {
             res.json('OK');
         });
     });
-
+//This route is used for the admin to approve posts
     app.get("/admin", function (req, res) {
         db.Posts.findAll({
             where: {
                 approved: 0
             }
         }).then(function (approvalListData) {
+            console.log("length approval list data"+approvalListData.length);
+            
             var approveListObject = {
                 approvalList: approvalListData
             };
@@ -124,5 +126,33 @@ module.exports = function (app) {
            // res.render("index",postsByCityObject);
         });
     });
-   
+     //This route is used by admin to approve posts
+     app.get("/api/admin/approve/:id", function (req, res) {
+        console.log(req.params.id);
+        db.Posts.update({
+            approved:1
+            
+          }, {
+            where: {
+                id: req.params.id
+            }
+         
+        }).then(function (results) {
+            
+           res.json(results);
+        });
+    });
+
+    //This route is used by admin to approve posts
+    app.get("/api/admin/delete/:id", function (req, res) {
+        console.log(req.params.id);
+        db.Posts.destroy({
+            where: {
+              id: req.params.id
+            }
+          }).then(function (results) {
+            
+           res.json(results);
+        });
+    });   
 };
