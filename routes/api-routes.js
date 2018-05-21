@@ -48,6 +48,7 @@ module.exports = function (app) {
         });
 
     });
+
 //This route is used for filtering the post.
     app.get("/api/posts/:id", function (req, res) {
         var activityObject={};
@@ -98,20 +99,23 @@ module.exports = function (app) {
     //This route is used for search posts by city
     app.get("/api/posts/city/:city", function (req, res) {
         console.log(req.params.city);
+        var activityObject={};
         db.Posts.findAll({
             where: {
-                city: req.params.city
+                city: req.params.city,
+                approved:1
             }
-        }).then(function (postsByCityResults) {
-            var postsByCityObject = {
-                activities: postsByCityResults,
-                categoryList:{}
-            };
-           // console.log(locationListObject);
-           res.json(postsByCityObject);
-           // res.render("index",postsByCityObject);
+        }).then(function (activityData) {
+            activityObject.activities=activityData
+            db.Categories.findAll({
+
+            }).then(function (categoryData) {
+                activityObject.categoryList=categoryData;               
+               res.render("index",activityObject);
+            });
         });
-    });
+    });          
+    
      //This route is used by admin to approve posts
      app.get("/api/admin/approve/:id", function (req, res) {
         console.log(req.params.id);
