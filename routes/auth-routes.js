@@ -24,7 +24,8 @@ module.exports = function (app, passport) {
         failureRedirect: '/login'
         }
     ));
-
+//This route is used for the admin to approve posts
+app.get("/admin", isLoggedIn, authController.admin);
 
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated()) {
