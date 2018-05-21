@@ -10,6 +10,10 @@
             <div id="missingInput" hidden></div>
 
             <h3 class="subtitle">Post a Place</h3>
+            {{#if success_msg}}
+
+            <div class="alert alert-success">{{success_msg}}</div>
+            {{/if}}
             <form id="placePost">
                 <div class="form-group">
                     <input type="text" class="form-control" id="placeName" placeholder="Name of place-required">
