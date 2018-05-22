@@ -173,8 +173,10 @@ input[type="text"] {
 	text-align: center;
 }
 
-h6 {
-	height: 30px;
+.postName {
+	background: rgba(255, 255, 255, 0.829);
+	border-radius: 5px;
+	padding: 5px;
 }
 
 .displayPic {
@@ -207,7 +209,7 @@ h6 {
 	margin: 5px;
 	padding: 15px;
 	border-radius: 10px;
-	width: 400px;
+	width: 450px;
 }
 
 #weekend {
@@ -247,8 +249,12 @@ h6 {
 }
 
 .eventDes, .eventAddress, .eventLink {
-	width: 200px;
+	width: 250px;
 	margin-left: 10px;
+}
+
+.eventDes {
+	margin-bottom: 10px;
 }
 
 #filterTitle {
@@ -287,18 +293,18 @@ h6 {
 	}
 	100% {
 		width: 500px;
-		height: 400px;
+		height: 250px;
 		/* background-color: rgb(216, 165, 115); */
-		background-image: url("../images/friends.jpg");
+		background-image: url("../images/hanging.jpg");
 	}
 }
 
 @keyframes flipBack {
 	0% {
 		width: 500px;
-		height: 300px;
+		height: 250px;
 		/* background-color: rgb(216, 165, 115); */
-		background-image: url("../images/friends.jpg");
+		background-image: url("../images/hanging.jpg");
 	}
 	50% {
 		transform: scale(0, 1) skewy(5deg);
