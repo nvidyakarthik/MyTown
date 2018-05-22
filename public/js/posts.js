@@ -52,7 +52,6 @@ $(document).ready(function () {
     $("#searchButton").click(function() {
         
         var city = $("#cityname").val().trim();
-        alert(city);
         window.location.href='/api/posts/city/'+city;   
       
     });

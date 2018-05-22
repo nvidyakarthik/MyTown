@@ -15,7 +15,7 @@ var app = express();
 
 //For Flash
 app.use(cookieParser('secret'));
-app.use(session({cookie: { maxAge: 60000 }}));
+app.use(session({cookie: { maxAge: 600000}}));
 app.use(flash());
 
 // For Passport

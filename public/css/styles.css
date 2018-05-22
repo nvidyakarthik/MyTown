@@ -49,6 +49,10 @@ input[type="text"] {
     margin : 0 auto;
 }
 
+#searchDiv input{
+	display:inline-block;
+}
+
 .subtitle {
 	margin-bottom: 20px;
 	color: black;
