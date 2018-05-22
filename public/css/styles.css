@@ -188,7 +188,7 @@ h6 {
 }
 
 .displayPicBorder {
-	border: 4px solid rgb(23, 206, 197);
+	border: 4px solid rgb(235, 195, 132);
 	border-radius: 10px;
 }
 
@@ -201,13 +201,22 @@ h6 {
 	border-radius: 10px;
 }
 
+.event {
+	background-color: rgb(207, 207, 207);
+	float: left;
+	position: relative;
+	margin: 5px;
+	padding: 15px;
+	border-radius: 10px;
+}
+
 .posts:hover {
 	background-color: rgb(207, 207, 207);
 
 }
 
 .info {
-	background-color: rgb(23, 206, 197);
+	background-color: rgb(235, 195, 132);
 	padding: 5px;
 	border-radius: 10px;
 }
@@ -226,6 +235,20 @@ h6 {
 
 .weblink:hover {
 	color: black;
+}
+
+.event {
+	width: 460px;
+}
+
+.eventImg, .eventDes, .eventAddress, .eventLink {
+	float: left;
+	position: relative;
+}
+
+.eventDes, .eventAddress, .eventLink {
+	width: 200px;
+	margin-left: 10px;
 }
 
 .flip {
@@ -252,7 +275,8 @@ h6 {
 	100% {
 		width: 500px;
 		height: 400px;
-		background-color: lightseagreen;
+		/* background-color: rgb(216, 165, 115); */
+		background-image: url("../images/sunset.jpg")
 	}
 }
 
@@ -260,7 +284,8 @@ h6 {
 	0% {
 		width: 500px;
 		height: 300px;
-		background-color: lightseagreen;
+		/* background-color: rgb(216, 165, 115); */
+		background-image: url("../images/sunset.jpg")
 	}
 	50% {
 		transform: scale(0, 1) skewy(5deg);
