@@ -11,7 +11,8 @@ body {
 	background-image: url("../images/jumboimage.jpg");
 	background-position: 0% 15%;
     background-size: cover;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	margin-bottom: 20px;
 }
 
 .topnav {
@@ -49,8 +50,7 @@ input[type="text"] {
 }
 
 .subtitle {
-	margin-top: 20px;
-	text-align: center;
+	margin-bottom: 20px;
 	color: black;
 }
 
@@ -135,7 +135,6 @@ input[type="text"] {
 
 .subtitle {
 	margin-top: 20px;
-	text-align: center;
 	color: black;
 }
 
@@ -192,7 +191,7 @@ h6 {
 	float: left;
 	position: relative;
 	margin: 5px;
-	padding: 15px;
+	padding: 10px;
 	background-color: rgb(231, 231, 231);
 	border-radius: 10px;
 }
@@ -204,6 +203,11 @@ h6 {
 	margin: 5px;
 	padding: 15px;
 	border-radius: 10px;
+	width: 400px;
+}
+
+#weekend {
+	margin: auto;
 }
 
 .posts:hover {
@@ -233,10 +237,6 @@ h6 {
 	color: black;
 }
 
-.event {
-	width: 460px;
-}
-
 .eventImg, .eventDes, .eventAddress, .eventLink {
 	float: left;
 	position: relative;
@@ -245,6 +245,19 @@ h6 {
 .eventDes, .eventAddress, .eventLink {
 	width: 200px;
 	margin-left: 10px;
+}
+
+#filterTitle {
+	text-align: left;
+	margin-left: 20px;
+}
+
+.adminCard {
+	margin: 10px;
+}
+
+.adminButtons {
+	margin: 15px;
 }
 
 .flip {
@@ -272,7 +285,7 @@ h6 {
 		width: 500px;
 		height: 400px;
 		/* background-color: rgb(216, 165, 115); */
-		background-image: url("../images/sunset.jpg")
+		background-image: url("../images/friends.jpg");
 	}
 }
 
@@ -281,7 +294,7 @@ h6 {
 		width: 500px;
 		height: 300px;
 		/* background-color: rgb(216, 165, 115); */
-		background-image: url("../images/sunset.jpg")
+		background-image: url("../images/friends.jpg");
 	}
 	50% {
 		transform: scale(0, 1) skewy(5deg);
