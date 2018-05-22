@@ -92,6 +92,7 @@ $(document).ready(function() {
       setTimeout(() => {
         $("#info"+this.id).removeAttr("hidden").show();
         $("#pic" + this.id).addClass("displayPicBorder");
+        $("#name" + this.id).addClass("postName");
       }, 1000 * 0.5);
     } 
     
@@ -100,6 +101,7 @@ $(document).ready(function() {
       setTimeout(() => {
         $("#info"+this.id).hide();
         $("#pic" + this.id).removeClass("displayPicBorder");
+        $("#name" + this.id).removeClass("postName");
       }, 1000 * 0.5);
     }
 
