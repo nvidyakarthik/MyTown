@@ -6,7 +6,7 @@ $(document).ready(function () {
       url: '/api/admin/approve/' + id
     }).then(function (data) {
       console.log(data);
-      alert("Posts Approved");
+      //alert("Posts Approved");
       location.reload();
     });
 
@@ -19,7 +19,7 @@ $(document).ready(function () {
       url: '/api/admin/delete/' + id
     }).then(function (data) {
       console.log(data);
-      alert("Posts Deleted");
+      //alert("Posts Deleted");
       location.reload();
     });
   });

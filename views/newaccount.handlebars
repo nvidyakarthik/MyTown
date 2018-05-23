@@ -1,88 +1,89 @@
 <div class="container">
-        <div class="row">
+    <div class="row">
 
-            <div class="col-3">
-            </div>
+        <div class="col-2"></div>
 
-            <div class="col-5">
-                <h3 class="subtitle">Create an Account</h3>
-                 {{#if error_msg}}
-                <div class="alert alert-danger">{{error_msg}}</div>
-                {{/if}} {{#if success_msg}}
-                <div class="alert alert-success">{{sucess_msg}}</div>
-                {{/if}}
-                <form action="/newaccount" method="post">
-                    <div class="form-group">
-                        <label for="firstname">First Name</label>
-                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter your first name">
-                    </div>
+        <div class="col-5">
+            <h3 class="subtitle">Create an Account</h3>
+            {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+            {{/if}} {{#if success_msg}}
+            <div class="alert alert-success">{{sucess_msg}}</div>
+            {{/if}}
+            <form action="/newaccount" method="post">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter your first name">
+                </div>
 
-                     <div class="form-group">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your last name">
-                    </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your last name">
+                </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
 
-                    <div id="passMatch" hidden>Passwords do not match</div>
+                <div id="passMatch" hidden>Passwords do not match</div>
 
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                    </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
 
-                    <div class="form-group">
-                        <label for="confirmpassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Password">
-                    </div>
+                <div class="form-group">
+                    <label for="confirmpassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Password">
+                </div>
 
-  
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
 
-                <div class="col-4">
-        <h3 class="subtitle">Happening this Weekend</h3>
-        <div id="weekend">
-            <div class="event" id="">
-                <h6 class="eventTitle">Bodies Revealed</h6>
-                <img class="eventImg" src="https://res.cloudinary.com/simpleview/image/upload/crm/phoenix/IMG_3102-1-_244d131b-5056-b3a8-49ba61143e1d44b3.jpg"
-                    alt="event" width="80px">
-                <div class="eventDes">The overwhelmingly popular "Bodies Revealed" exhibit explores the human body in an intimate and informative
-                    way, giving visitors and unprecedented way to view "what lies beneath" the surface of the skin.</div>
-                <h6 class="eventAddress">
-                    <u>Address:</u>
-                </h6>
-                <div class="eventAddress">OdySea in the Desert 9500 E. Via de Ventura Scottsdale, AZ</div>
-                <a href="http://www.bodiesaz.com/" class="weblink eventLink" target="_blank">Website</a>
-            </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
 
-            <div class="event" id="">
-                <h6 class="eventTitle">Dear Listener</h6>
-                <div class="eventDes">This exhibit is a mid-career retrospective of contemporary Native Alaskin artist, Nicholas Galanin.</div>
-                <h6 class="eventAddress">
-                    <u>Address:</u>
-                </h6>
-                <div class="eventAddress">Heard Museum 2301 N. Central Ave. Phoenix, AZ</div>
-                <a href="https://www.dearlistener.org/" class="weblink eventLink" target="_blank">Website</a>
-            </div>
+        <div class="col-1"></div>
 
-            <div class="event" id="">
-                <h6 class="eventTitle">Dino Explorer</h6>
-                <img class="eventImg" src="https://res.cloudinary.com/simpleview/image/upload/crm/phoenix/ldc-dino-freigegeben-600_a30a134d-5056-b3a8-493a9848d0b5e1b9.jpg"
-                    alt="event" width="80px">
-                <div class="eventDes">This Jurassic-sized adventure is sure to put a smile on the face of any dino fans.</div>
-                <h6 class="eventAddress">
-                    <u>Address:</u>
-                </h6>
-                <div class="eventAddress">Legoland Discovery Center 5000 S. Arizona Mills Circle Ste. 135 Tempe, AZ</div>
-                <a href="https://arizona.legolanddiscoverycenter.com/whats-inside/dino-explorer/" class="weblink eventLink" target="_blank">Website</a>
+        <div class="col-4">
+            <h3 class="subtitle">Happening this Weekend</h3>
+            <div id="weekend">
+                <div class="event" id="">
+                    <h6 class="eventTitle">Bodies Revealed</h6>
+                    <img class="eventImg" src="https://res.cloudinary.com/simpleview/image/upload/crm/phoenix/IMG_3102-1-_244d131b-5056-b3a8-49ba61143e1d44b3.jpg"
+                        alt="event" width="80px">
+                    <div class="eventDes">The overwhelmingly popular "Bodies Revealed" exhibit explores the human body in an intimate and informative
+                        way, giving visitors and unprecedented way to view "what lies beneath" the surface of the skin.</div>
+                    <h6 class="eventAddress">
+                        <u>Address:</u>
+                    </h6>
+                    <div class="eventAddress">OdySea in the Desert 9500 E. Via de Ventura Scottsdale, AZ</div>
+                    <a href="http://www.bodiesaz.com/" class="weblink eventLink" target="_blank">Website</a>
+                </div>
+
+                <div class="event" id="">
+                    <h6 class="eventTitle">Dear Listener</h6>
+                    <div class="eventDes">This exhibit is a mid-career retrospective of contemporary Native Alaskin artist, Nicholas Galanin.</div>
+                    <h6 class="eventAddress">
+                        <u>Address:</u>
+                    </h6>
+                    <div class="eventAddress">Heard Museum 2301 N. Central Ave. Phoenix, AZ</div>
+                    <a href="https://www.dearlistener.org/" class="weblink eventLink" target="_blank">Website</a>
+                </div>
+
+                <div class="event" id="">
+                    <h6 class="eventTitle">Dino Explorer</h6>
+                    <img class="eventImg" src="https://res.cloudinary.com/simpleview/image/upload/crm/phoenix/ldc-dino-freigegeben-600_a30a134d-5056-b3a8-493a9848d0b5e1b9.jpg"
+                        alt="event" width="80px">
+                    <div class="eventDes">This Jurassic-sized adventure is sure to put a smile on the face of any dino fans.</div>
+                    <h6 class="eventAddress">
+                        <u>Address:</u>
+                    </h6>
+                    <div class="eventAddress">Legoland Discovery Center 5000 S. Arizona Mills Circle Ste. 135 Tempe, AZ</div>
+                    <a href="https://arizona.legolanddiscoverycenter.com/whats-inside/dino-explorer/" class="weblink eventLink" target="_blank">Website</a>
+                </div>
             </div>
         </div>
     </div>
-        </div>
 </div>

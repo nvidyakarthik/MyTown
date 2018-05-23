@@ -7,7 +7,7 @@
             <ul>
                 {{#each categoryList}}
                 <li>
-                    <a href="/api/posts/{{id}}">{{categoryName}}</a>
+                    <a class="catList" href="/api/posts/{{id}}">{{categoryName}}</a>
 
                 </li>
                 {{/each}}
@@ -36,7 +36,7 @@
                         </h6>{{description}}</div>
                     <!-- <br><h6 class='address'><u>Map:</u></h6> -->
                     <div id='map'></div>
-                    <div class='address'>{{street}},{{city}},{{state}}</div>
+                    <div class='address'>{{street}}, {{city}}, {{state}}</div>
                     <a class="weblink" target="_blank" href="{{websitelink}}">Website</a>
                 </div>
             </div>

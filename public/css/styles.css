@@ -200,7 +200,49 @@ input[type="text"] {
 	padding: 10px;
 	background-color: rgb(231, 231, 231);
 	border-radius: 10px;
+	min-height: 170px;
+	animation: fadeIn 2s;
 }
+
+/* #post1 {
+	animation: fall 2s ease-out;
+	animation-play-state: paused;
+}
+
+#post2 {
+	animation: fall 2s ease-in;
+	animation-play-state: paused;
+}
+
+#post3 {
+	animation: fall 2s ease;
+	animation-play-state: paused;
+}
+
+#post29 {
+	animation: fall 2s ease-in-out;
+	animation-play-state: paused;
+}
+
+#post30 {
+	animation: fall 2s ease-in-out;
+	animation-play-state: paused;
+}
+
+#post31 {
+	animation: fall 2s ease;
+	animation-play-state: paused;
+}
+
+#post32 {
+	animation: fall 2s ease-in;
+	animation-play-state: paused;
+}
+
+#post33 {
+	animation: fall 2s ease-out;
+	animation-play-state: paused;
+} */
 
 .event {
 	background-color: rgb(207, 207, 207);
@@ -210,6 +252,7 @@ input[type="text"] {
 	padding: 15px;
 	border-radius: 10px;
 	width: 450px;
+	animation: fadeIn 2s;
 }
 
 #weekend {
@@ -270,6 +313,14 @@ input[type="text"] {
 	margin: 15px;
 }
 
+.catList {
+	color: rgb(83, 1, 83);
+}
+
+.catList:hover {
+	color: rgb(151, 0, 151);
+}
+
 .flip {
 	animation-name: flip;
 	animation-duration: 1.2s;
@@ -313,5 +364,24 @@ input[type="text"] {
 		transform: scale(0, 1) skewy(-5deg);
 	}
 	100% {
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opactity: 1;
+	}
+}
+
+@keyframes fall {
+	from {
+		opacity: 0;
+		transform: translatey(-200px);
+	}
+	to {
+		transform: translatey(0);
 	}
 }
