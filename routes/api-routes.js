@@ -18,6 +18,8 @@ module.exports = function (app) {
                 //console.log(categoryObject);
                 res.render("index",activityObject);
             });
+        }).catch(function(error){
+            console.log(error);
         });
     });          
       
