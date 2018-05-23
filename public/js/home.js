@@ -109,7 +109,7 @@ $(document).ready(function () {
 
   $(document).on("click", ".posts", flip);
 
-  /* $.ajax({
+ /*  $.ajax({
     url: "https://api.eventful.com/json/events/search?app_key=tLZjcCM8s77cvN5x&location=+Phoenix&date=Future",
     dataType: 'jsonp',
     success: function (weekend) {
@@ -123,11 +123,11 @@ $(document).ready(function () {
           $("#apiCard").append("<img class='eventImg' src='" + weekend.events.event[i].image.thumb.url + "' alt='event' width='80px'>");
         }
         $("#apiCard").append("<div class='eventDes'>" + weekend.events.event[i].description + "</div>");
-        $("#apiCatd").append("<h6 class='eventAddress'><u>Address:</u></h6>");
-        $("#apiCatd").append("<div class='eventAddress'>" + weekend.events.event[i].venue_address + "</div>");
-        $("#apiCatd").append("<a href='" + weekend.events.event[i].city_name + "' class='weblink eventLink' target='_blank'>Website</a>");
+        $("#apiCard").append("<h6 class='eventAddress'><u>Address:</u></h6>");
+        $("#apiCard").append("<div class='eventAddress'>" + weekend.events.event[i].venue_address + "</div>");
+        $("#apiCard").append("<a href='" + weekend.events.event[i].city_name + "' class='weblink eventLink' target='_blank'>Website</a></div>");
       }
-
+ 
     }
   }); */
 
